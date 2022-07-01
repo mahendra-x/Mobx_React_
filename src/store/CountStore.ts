@@ -3,7 +3,7 @@ import { IRootStore } from "./RootStore";
 
 export class CountStore {
   count: number = 1;
-  rootStore: IRootStore
+  rootStore: IRootStore;
 
   constructor(rootStore: IRootStore) {
     makeObservable(this, {
@@ -18,10 +18,11 @@ export class CountStore {
     this.count++;
   };
   decrement = () => {
+    console.log("this.rootStore",this.rootStore);
     this.count--;
   };
 
   get getCountValue() {
     return this.count;
-  };
+  }
 }
